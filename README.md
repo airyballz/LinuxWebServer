@@ -19,9 +19,10 @@
 [WSGI](https://wsgi.readthedocs.io/en/latest/)     
 
 
-### Configure Remote Linux Webserver ###
-## 
-#### Preparing Your Server ####       
+### Configure Remote Linux Webserver ###                                                       
+
+#### Preparing Your Server #### |
+--------------------------------|
 1. Download and install [GIT-Bash](https://git-scm.com/) or any other program you can use connect using a SSH terminal session
 1. Create an [AWS](https://lightsail.aws.amazon.com) (Amazon Web Service) Account
 1. Create a new instance of [Ubuntu](https://www.ubuntu.com/) using [AWS LightSail](https://lightsail.aws.amazon.com) Server Hosting at Amazon
