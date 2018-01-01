@@ -125,7 +125,7 @@ Add Users To Your Server
 Creating SSH Key for Users
 --------------------------------------------------------------------
 
-1. Create Folders For Student
+1. Create Folders For Users
 
     ```ruby                                 
     sudo usermod -aG sudo student
@@ -133,18 +133,14 @@ Creating SSH Key for Users
     sudo -u student touch /home/student/.ssh/authorized_keys
     sudo chmod 700 /home/student/.ssh
     sudo chmod 644 /home/student/.ssh/authorized_keys
-    ```                                 
-
-1. Create Folders For grader
-
-    ```ruby                                 
+    
     sudo -u grader mkdir /home/grader/.ssh
     sudo -u grader touch /home/grader/.ssh/authorized_keys
     sudo chmod 700 /home/grader/.ssh
-    sudo chmod 644 /home/grader/.ssh/authorized_keys
+    sudo chmod 644 /home/grader/.ssh/authorized_keys    
     ```                                 
 
-1. Generate SSH Keys 
+1. Generate SSH Keys For Users
 
    ```ruby                                 
    ssh-keygen
