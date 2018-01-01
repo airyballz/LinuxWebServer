@@ -49,7 +49,7 @@ Connecting to Your Server
 Updating Your Server
 --------------------------------------------------------------------
 
-1. Check For Updates __||__ Installs __||__ Reboot
+1. Check For Updates __|__ Installs __|__ Reboot
 
 	```bash									
 	apt-get install nano
