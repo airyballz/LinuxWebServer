@@ -28,7 +28,7 @@
     + Navigate to Account section of [Amazon LightSail](https://lightsail.aws.amazon.com) to grab the SSHKeyRename it and remember its location
     + Inside [AWS](https://lightsail.aws.amazon.com) control panel navigate to the network tab for the newly created ninstance
     + Attach a static Ip to your server
-    + For security change default firewall entry for SSH port 22 to 2222
+    + For security change default firewall entry for SSH port 22 to 2200
 
 #### Connecting to Your Server #### 
 1. We need the following Info to Connect to Your server
