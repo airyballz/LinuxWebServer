@@ -128,7 +128,6 @@ Creating SSH Key for Users
 1. Create Folders For Users
 
     ```ruby                                 
-    sudo usermod -aG sudo student
     sudo -u student mkdir /home/student/.ssh
     sudo -u student touch /home/student/.ssh/authorized_keys
     sudo chmod 700 /home/student/.ssh
