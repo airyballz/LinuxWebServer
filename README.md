@@ -18,8 +18,9 @@
 [SQLAlchemy 1.1.14](https://www.sqlalchemy.org/)    
 [WSGI](https://wsgi.readthedocs.io/en/latest/)     
 
+
 ### Configure Remote Linux Webserver ###
-----------------------------------
+## 
 #### Preparing Your Server ####       
 1. Download and install [GIT-Bash](https://git-scm.com/) or any other program you can use connect using a SSH terminal session
 1. Create an [AWS](https://lightsail.aws.amazon.com) (Amazon Web Service) Account
@@ -144,8 +145,8 @@
    sudo nano //home/grader/.ssh/authorized_keys
    ```                                 
 
-## Deploying Web App On Server ## 
-
+### Deploying Web App On Server ###
+## 
 1. Install Required Plugins
 
     ```ruby                                 
@@ -216,7 +217,7 @@
     ```                                 
 
 #### RESOURCES ####
-
+## 
 [How To Deploy a Flask Application on an Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 
 [How To Setup a Firewall with UFW on an Ubuntu and Debian Cloud Server](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server)
