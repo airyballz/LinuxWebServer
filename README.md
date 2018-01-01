@@ -1,5 +1,5 @@
 ## Linux Udacity's Full Stack Final Project ##
-
+### 
 #### PROJECT DETAILS ####
 > Remotley Install A Linux Server To Host A Public Website      
  http://18.217.166.56/
@@ -18,9 +18,8 @@
 [SQLAlchemy 1.1.14](https://www.sqlalchemy.org/)    
 [WSGI](https://wsgi.readthedocs.io/en/latest/)     
 
-
-### Configure Remote Linux Webserver ###                                                       
-
+## 
+### Configure Remote Linux Webserver ###
 #### Preparing Your Server #### 
 1. Download and install [GIT-Bash](https://git-scm.com/) or any other program you can use connect using a SSH terminal session
 1. Create an [AWS](https://lightsail.aws.amazon.com) (Amazon Web Service) Account
@@ -32,7 +31,6 @@
     + For security change default firewall entry for SSH port 22 to 2222
 
 #### Connecting to Your Server #### 
-
 1. We need the following Info to Connect to Your server
     + __Public IP__: http://18.217.166.56/
 1. Open [GIT-Bash](https://git-scm.com/) | Connect To You server
@@ -41,7 +39,6 @@
         * __sh ubuntu@http://18.217.166.56/ -p 22 -i SSHkey__                               
 
 #### Updating Your Server #### 
-
 1. Check For Updates __|__ Installs __|__ Reboot
 
     ```ruby                                 
@@ -52,7 +49,6 @@
     ```                                 
 
 #### Securing Your Server #### 
-
 1. Removes AppArmor And Updates Time
 
     ```ruby                                 
@@ -88,7 +84,6 @@
     ```                                 
 
 ####  Add Users To Your Server #### 
-
 1. Create New users
 
     ```ruby                                 
@@ -114,7 +109,6 @@
     ```                                 
 
 #### Creating SSH Key for Users #### 
-
 1. Create Folders For Users
 
     ```ruby                                 
@@ -145,8 +139,9 @@
    sudo nano //home/grader/.ssh/authorized_keys
    ```                                 
 
+##
 ### Deploying Web App On Server ###
-## 
+#### 
 1. Install Required Plugins
 
     ```ruby                                 
@@ -216,8 +211,9 @@
     git clone
     ```                                 
 
-#### RESOURCES ####
 ## 
+### 
+#### RESOURCES ####
 [How To Deploy a Flask Application on an Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 
 [How To Setup a Firewall with UFW on an Ubuntu and Debian Cloud Server](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server)
