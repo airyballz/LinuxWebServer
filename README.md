@@ -145,6 +145,7 @@ Creating SSH Key for Users
     ```                                 
 
 1. Create Keys and Copy to server
+
    _Open [GIT-Bash](https://git-scm.com/) locally and create keys_
    ```ruby                                 
    ssh-keygen
