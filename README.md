@@ -145,7 +145,7 @@ Creating SSH Key for Users
     ```                                 
 
 1. Create Keys and Copy to server
-   > Open [GIT-Bash](https://git-scm.com/) locally and create keys
+   _Open [GIT-Bash](https://git-scm.com/) locally and create keys_
    ```ruby                                 
    ssh-keygen
    Generating public/private rsa key pair.
@@ -153,7 +153,7 @@ Creating SSH Key for Users
    Enter passphrase (empty for no passphrase):
    Enter same passphrase again:
    ```                                 
-   > Copy .pub contents that generated and copy to server
+   _Copy .pub contents that generated and copy to server_
    ```ruby                                 
    sudo nano //home/student/.ssh/authorized_keys
    sudo nano //home/grader/.ssh/authorized_keys
