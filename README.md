@@ -40,196 +40,196 @@ Connecting to Your Server
 --------------------------------------------------------------------
 
 1. We need the following Info to Connect to Your server
-	+ __Public IP__: http://18.217.166.56/
+    + __Public IP__: http://18.217.166.56/
 1. Open [GIT-Bash](https://git-scm.com/) | Connect To You server
-	+ [GIT-Bash](https://git-scm.com/) in folder where SSH-key was downloaded
-	+ Enter user, ip, port and Key								
-		* __sh ubuntu@http://18.217.166.56/ -p 22 -i SSHkey__								
+    + [GIT-Bash](https://git-scm.com/) in folder where SSH-key was downloaded
+    + Enter user, ip, port and Key                              
+        * __sh ubuntu@http://18.217.166.56/ -p 22 -i SSHkey__                               
 
 Updating Your Server
 --------------------------------------------------------------------
 
 1. Check For Updates __|__ Installs __|__ Reboot
 
-	```bash									
-	apt-get install nano
-	sudo apt-get update
-	sudo apt-get upgrade
-	sudo reboot
-	```									
+    ```ruby                                 
+    apt-get install nano
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo reboot
+    ```                                 
 
 Securing Your Server
 --------------------------------------------------------------------
 
 1. Removes AppArmor And Updates Time
 
-	```bash									
-	sudo  dpkg-reconfigure dash
-	sudo shell service apparmor stop
-	sudo update-rc.d -f apparmor remove
-	sudo apt-get remove apparmor apparmor-utils
-	sudo apt-get -y install ntp ntpdate
-	```									
+    ```ruby                                 
+    sudo  dpkg-reconfigure dash
+    sudo shell service apparmor stop
+    sudo update-rc.d -f apparmor remove
+    sudo apt-get remove apparmor apparmor-utils
+    sudo apt-get -y install ntp ntpdate
+    ```                                 
 
 1. Creates Rules and Enables linux Local Firewall
 
-	```bash									
-	sudo ufw default deny incoming
-	sudo deny ssh
-	sudo ufw default allow outgoing
-	sudo ufw allow 2200 comment 'SSH'
-	sudo ufw allow 80/tcp commment 'WWW'
-	sudo ufw allow ntp comment 'TIME'
-	sudo ufw enable
-	```									
+    ```ruby                                 
+    sudo ufw default deny incoming
+    sudo deny ssh
+    sudo ufw default allow outgoing
+    sudo ufw allow 2200 comment 'SSH'
+    sudo ufw allow 80/tcp commment 'WWW'
+    sudo ufw allow ntp comment 'TIME'
+    sudo ufw enable
+    ```                                 
 
 1. Disable SSH Passwords | Change SSH Default Port | Disable RootLogin
 
-	```bash									
-	sudo nano /etc/ssh/sshd_config
-	--------------------------------------------------------------
-	Change PasswordAuthentication yes -- PasswordAuthentication
-	Change Port 22 -- Port 2200
-	Change PermitRootLogin yes -- PermitRootLogin no 
-	sudo service sshd restart
-	--------------------------------------------------------------
-	```									
+    ```ruby                                 
+    sudo nano /etc/ssh/sshd_config
+    --------------------------------------------------------------
+    Change PasswordAuthentication yes -- PasswordAuthentication
+    Change Port 22 -- Port 2200
+    Change PermitRootLogin yes -- PermitRootLogin no 
+    sudo service sshd restart
+    --------------------------------------------------------------
+    ```                                 
 
 Add Users To Your Server
 --------------------------------------------------------------------
 
 1. Create New users
 
-	```bash									
-	sudo useradd student --create-home --password "" --shell /bin/bash --uid 5013 --user-group
-	sudo useradd grader --create-home --password "" --shell /bin/bash --uid 5014 --user-group
-	```									
+    ```ruby                                 
+    sudo useradd student --create-home --password "" --shell /bin/bash --uid 5013 --user-group
+    sudo useradd grader --create-home --password "" --shell /bin/bash --uid 5014 --user-group
+    ```                                 
 
 1. Add Users to Sudo
 
-	```bash									
-	cat > /tmp/USERS.tmp <<-EOF
-	#
-	# List Of Sudoers Added
-	# UsersPrivliges rules for student
-	student ALL=(ALL) NOPASSWD:ALL
-	# UsersPrivliges rules for grader
-	grader ALL=(ALL) NOPASSWD:ALL	
-	EOF
-	sudo EDITOR="/tmp/USERS.tmp" visudo -c -q -s -f USERS.tmp
-	sudo chown root:root /tmp/USERS.tmp
-	sudo chmod 0440 /tmp/USERS.tmp
-	sudo mv /tmp/USERS.tmp /etc/sudoers.d/USERS
-	```									
+    ```ruby                                 
+    cat > /tmp/USERS.tmp <<-EOF
+    #
+    # List Of Sudoers Added
+    # UsersPrivliges rules for student
+    student ALL=(ALL) NOPASSWD:ALL
+    # UsersPrivliges rules for grader
+    grader ALL=(ALL) NOPASSWD:ALL   
+    EOF
+    sudo EDITOR="/tmp/USERS.tmp" visudo -c -q -s -f USERS.tmp
+    sudo chown root:root /tmp/USERS.tmp
+    sudo chmod 0440 /tmp/USERS.tmp
+    sudo mv /tmp/USERS.tmp /etc/sudoers.d/USERS
+    ```                                 
 
 Creating SSH Key for Users
 --------------------------------------------------------------------
 
 1. Create Folders For Student
 
-	```bash									
-	sudo usermod -aG sudo student
-	sudo -u airyman mkdir /home/student/.ssh
-	sudo -u airyman touch /home/student/.ssh/authorized_keys
-	sudo chmod 700 /home/student/.ssh
-	sudo chmod 644 /home/student/.ssh/authorized_keys
-	```									
+    ```ruby                                 
+    sudo usermod -aG sudo student
+    sudo -u airyman mkdir /home/student/.ssh
+    sudo -u airyman touch /home/student/.ssh/authorized_keys
+    sudo chmod 700 /home/student/.ssh
+    sudo chmod 644 /home/student/.ssh/authorized_keys
+    ```                                 
 
 1. Create Folders For grader
 
-	```bash									
-	sudo -u grader mkdir /home/grader/.ssh
-	sudo -u grader touch /home/grader/.ssh/authorized_keys
-	sudo chmod 700 /home/grader/.ssh
-	sudo chmod 644 /home/grader/.ssh/authorized_keys
-	```									
+    ```ruby                                 
+    sudo -u grader mkdir /home/grader/.ssh
+    sudo -u grader touch /home/grader/.ssh/authorized_keys
+    sudo chmod 700 /home/grader/.ssh
+    sudo chmod 644 /home/grader/.ssh/authorized_keys
+    ```                                 
 
 1. Create Keys and Copy to server
-	+ Open [GIT-Bash](https://git-scm.com/) locally and create keys
-		```ruby									
-		ssh-keygen
-		Generating public/private rsa key pair.
-		Enter file in which to save the key (/c/Users/rober/.ssh/id_rsa): id_rsa
-		Enter passphrase (empty for no passphrase):
-		Enter same passphrase again:
-		```									
-	+ Copy .pub contents that generated and copy to server
-		```bash									
-		sudo nano //home/student/.ssh/authorized_keys
-		sudo nano //home/grader/.ssh/authorized_keys
-		```									
+    + Open [GIT-Bash](https://git-scm.com/) locally and create keys
+        ```ruby                                 
+        ssh-keygen
+        Generating public/private rsa key pair.
+        Enter file in which to save the key (/c/Users/rober/.ssh/id_rsa): id_rsa
+        Enter passphrase (empty for no passphrase):
+        Enter same passphrase again:
+        ```
+    + Copy .pub contents that generated and copy to server
+        ```ruby                                 
+        sudo nano //home/student/.ssh/authorized_keys
+        sudo nano //home/grader/.ssh/authorized_keys
+        ```                                 
 
 Deploy Project
 --------------------------------------------------------------------
 
 1. Install Required Plugins
 
-	```bash									
-	sudo apt-get install apache2
-	sudo apt-get install libapache2-mod-wsgi python-dev
-	sudo a2enmod wsgi
-	sudo apt-get install python-pip
-	sudo pip install Flask==0.12.2
-	sudo pip install SQLAlchemy==1.1.14
-	sudo pip install Flask-Login==0.2.11
-	sudo pip install Flask-GoogleLogin==0.3.1
-	```									
+    ```ruby                                 
+    sudo apt-get install apache2
+    sudo apt-get install libapache2-mod-wsgi python-dev
+    sudo a2enmod wsgi
+    sudo apt-get install python-pip
+    sudo pip install Flask==0.12.2
+    sudo pip install SQLAlchemy==1.1.14
+    sudo pip install Flask-Login==0.2.11
+    sudo pip install Flask-GoogleLogin==0.3.1
+    ```                                 
 
 1. Configure [Apache](https://httpd.apache.org/docs/trunk/getting-started.html)
 
-	```bash									
-	sudo nano /etc/apache2/sites-available/itemcat.conf
-	-------------------------------------------------------------
-	<VirtualHost *:80>
-		ServerName ec2-18-217-166-56.us-east-2.compute.amazonaws.com
-		ServerAlias 18.217.166.56
-		WSGIDaemonProcess itemcat user=www-data group=www-data threads=5
-		WSGIScriptAlias / /var/www/itemcat/itemcat.wsgi
-		<Directory /var/www/itemcat/itemcat/>
-			WSGIScriptReloading On
-			WSGIProcessGroup itemcat
-			WSGIApplicationGroup %{GLOBAL}
-			Order deny,allow
-			Allow from all
-		</Directory>
-		ErrorLog ${APACHE_LOG_DIR}/error.log
-		LogLevel warn
-		CustomLog ${APACHE_LOG_DIR}/access.log combined
-	</VirtualHost>
-	-------------------------------------------------------------
-	sudo a2ensite itemcat
-	```										
-	
+    ```ruby                                 
+    sudo nano /etc/apache2/sites-available/itemcat.conf
+    -------------------------------------------------------------
+    <VirtualHost *:80>
+        ServerName ec2-18-217-166-56.us-east-2.compute.amazonaws.com
+        ServerAlias 18.217.166.56
+        WSGIDaemonProcess itemcat user=www-data group=www-data threads=5
+        WSGIScriptAlias / /var/www/itemcat/itemcat.wsgi
+        <Directory /var/www/itemcat/itemcat/>
+            WSGIScriptReloading On
+            WSGIProcessGroup itemcat
+            WSGIApplicationGroup %{GLOBAL}
+            Order deny,allow
+            Allow from all
+        </Directory>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        LogLevel warn
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+    -------------------------------------------------------------
+    sudo a2ensite itemcat
+    ```                                     
+    
 1. Configure [WSGI](https://wsgi.readthedocs.io/en/latest/) File
 
-	```bash									
-	sudo nano itemcat.wsgi
-	-------------------------------------------------------------
-	#!/usr/bin/python
-	import sys
-	import logging
-	logging.basicConfig(stream=sys.stderr)
-	sys.path.insert(0,"/var/www/itemcat/")
-	from itemcat import app as application
-	application.secret_key = 'secret key'
-	-------------------------------------------------------------
-	sudo service apache2 restart
-	```									
+    ```ruby                                 
+    sudo nano itemcat.wsgi
+    -------------------------------------------------------------
+    #!/usr/bin/python
+    import sys
+    import logging
+    logging.basicConfig(stream=sys.stderr)
+    sys.path.insert(0,"/var/www/itemcat/")
+    from itemcat import app as application
+    application.secret_key = 'secret key'
+    -------------------------------------------------------------
+    sudo service apache2 restart
+    ```                                 
 
 1. Install [GIT-Bash](https://git-scm.com/)
 
-	```bash									
-	sudo apt-get install git
-	git config --global user.name "username"
-	git config --global user.email "email@domain.com"
-	```										
+    ```ruby                                 
+    sudo apt-get install git
+    git config --global user.name "username"
+    git config --global user.email "email@domain.com"
+    ```                                     
 
 1. Clone Item Catalog Repository from Previous Project
 
-	```bash									
-	git init
-	git clone
-	```									
+    ```ruby                                 
+    git init
+    git clone
+    ```                                 
 
 ## RESOURCES
 --------------------------------------------------------------------
