@@ -144,9 +144,8 @@ Creating SSH Key for Users
     sudo chmod 644 /home/grader/.ssh/authorized_keys
     ```                                 
 
-1. Create Keys and Copy to server
+1. Generate SSH Keys 
 
-   _Open [GIT-Bash](https://git-scm.com/) locally and create keys_
    ```ruby                                 
    ssh-keygen
    Generating public/private rsa key pair.
@@ -154,7 +153,8 @@ Creating SSH Key for Users
    Enter passphrase (empty for no passphrase):
    Enter same passphrase again:
    ```                                 
-   _Copy .pub contents that generated and copy to server_
+1. Copy SSH Keys to Server
+
    ```ruby                                 
    sudo nano //home/student/.ssh/authorized_keys
    sudo nano //home/grader/.ssh/authorized_keys
