@@ -1,31 +1,26 @@
 ## Linux Udacity's Full Stack Final Project ##
 
-> Configure Linux Webserver
-
-### PROJECT DETAILS ###
-
+#### PROJECT DETAILS ####
 > Remotley Install A Linux Server To Host A Public Website      
  http://18.217.166.56/
 
-### REQUIREMENTS ###
-
+#### REQUIREMENTS ####
 > [Ubuntu](https://www.ubuntu.com/)    
 [Amazon Web Service](https://aws.amazon.com/)    
 [Amazon LightSail](https://lightsail.aws.amazon.com)    
 [GIT-Bash](https://git-scm.com/)
 
-### LINUX PACKAGES USED ###
-
+#### LINUX PACKAGES USED ####
 > [Apache2](https://httpd.apache.org/docs/trunk/getting-started.html)    
 [Flask 0.12.2](http://flask.pocoo.org/)    
 [Flask-Login 0.2.11](https://flask-login.readthedocs.io/en/latest/)    
 [Flask-GoogleLogin 0.3.1](https://pythonhosted.org/Flask-GoogleLogin/)    
 [SQLAlchemy 1.1.14](https://www.sqlalchemy.org/)    
 [WSGI](https://wsgi.readthedocs.io/en/latest/)     
+## ##
 
 
-Preparing Your Server
---------------------------------------------------------------------
+#### Preparing Your Server ####
 
 1. Download and install [GIT-Bash](https://git-scm.com/) or any other program you can use connect using a SSH terminal session
 1. Create an [AWS](https://lightsail.aws.amazon.com) (Amazon Web Service) Account
@@ -36,8 +31,7 @@ Preparing Your Server
     + Attach a static Ip to your server
     + For security change default firewall entry for SSH port 22 to 2222
 
-Connecting to Your Server
---------------------------------------------------------------------
+#### Connecting to Your Server #### 
 
 1. We need the following Info to Connect to Your server
     + __Public IP__: http://18.217.166.56/
@@ -46,8 +40,7 @@ Connecting to Your Server
     + Enter user, ip, port and Key                              
         * __sh ubuntu@http://18.217.166.56/ -p 22 -i SSHkey__                               
 
-Updating Your Server
---------------------------------------------------------------------
+#### Updating Your Server #### 
 
 1. Check For Updates __|__ Installs __|__ Reboot
 
@@ -58,8 +51,7 @@ Updating Your Server
     sudo reboot
     ```                                 
 
-Securing Your Server
---------------------------------------------------------------------
+#### Securing Your Server #### 
 
 1. Removes AppArmor And Updates Time
 
@@ -95,8 +87,7 @@ Securing Your Server
     --------------------------------------------------------------
     ```                                 
 
-Add Users To Your Server
---------------------------------------------------------------------
+####  Add Users To Your Server #### 
 
 1. Create New users
 
@@ -122,8 +113,7 @@ Add Users To Your Server
     sudo mv /tmp/USERS.tmp /etc/sudoers.d/USERS
     ```                                 
 
-Creating SSH Key for Users
---------------------------------------------------------------------
+#### Creating SSH Key for Users #### 
 
 1. Create Folders For Users
 
@@ -155,8 +145,7 @@ Creating SSH Key for Users
    sudo nano //home/grader/.ssh/authorized_keys
    ```                                 
 
-Deploy Project
---------------------------------------------------------------------
+#### Deploy Project #### 
 
 1. Install Required Plugins
 
@@ -227,8 +216,7 @@ Deploy Project
     git clone
     ```                                 
 
-## RESOURCES
---------------------------------------------------------------------
+## RESOURCES ##
 
 [How To Deploy a Flask Application on an Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 
