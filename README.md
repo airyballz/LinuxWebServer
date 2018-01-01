@@ -36,7 +36,7 @@
 1. Open [GIT-Bash](https://git-scm.com/) | Connect To You server
     + [GIT-Bash](https://git-scm.com/) in folder where SSH-key was downloaded
     + Enter user, ip, port and Key                              
-        * __sh ubuntu@http://18.217.166.56/ -p 22 -i SSHkey__                               
+        ``` sh ubuntu@http://18.217.166.56/ -p 22 -i SSHkey ```                              
 
 #### Updating Your Server #### 
 1. Check For Updates __|__ Installs __|__ Reboot
