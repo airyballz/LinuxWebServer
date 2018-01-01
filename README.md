@@ -129,8 +129,8 @@ Creating SSH Key for Users
 
     ```ruby                                 
     sudo usermod -aG sudo student
-    sudo -u airyman mkdir /home/student/.ssh
-    sudo -u airyman touch /home/student/.ssh/authorized_keys
+    sudo -u student mkdir /home/student/.ssh
+    sudo -u student touch /home/student/.ssh/authorized_keys
     sudo chmod 700 /home/student/.ssh
     sudo chmod 644 /home/student/.ssh/authorized_keys
     ```                                 
