@@ -49,7 +49,7 @@ Connecting to Your Server
 Updating Your Server
 --------------------------------------------------------------------
 
-1. Check For Updates | Installs Then | Reboot
+1. Check For Updates __||__ Installs __||__ Reboot
 
 	```bash									
 	apt-get install nano
@@ -64,12 +64,10 @@ Securing Your Server
 1. Removes AppArmor And Updates Time
 
 	```bash									
-	echo "Removing apparmor and apparmor-utils"
 	sudo  dpkg-reconfigure dash
 	sudo shell service apparmor stop
 	sudo update-rc.d -f apparmor remove
 	sudo apt-get remove apparmor apparmor-utils
-	echo "Syncronize With Time Server"
 	sudo apt-get -y install ntp ntpdate
 	```									
 
