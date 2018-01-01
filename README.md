@@ -17,11 +17,10 @@
 [Flask-GoogleLogin 0.3.1](https://pythonhosted.org/Flask-GoogleLogin/)    
 [SQLAlchemy 1.1.14](https://www.sqlalchemy.org/)    
 [WSGI](https://wsgi.readthedocs.io/en/latest/)     
-## ##
 
-
-#### Preparing Your Server ####
-
+### Configure Remote Linux Webserver ###
+----------------------------------
+#### Preparing Your Server ####       
 1. Download and install [GIT-Bash](https://git-scm.com/) or any other program you can use connect using a SSH terminal session
 1. Create an [AWS](https://lightsail.aws.amazon.com) (Amazon Web Service) Account
 1. Create a new instance of [Ubuntu](https://www.ubuntu.com/) using [AWS LightSail](https://lightsail.aws.amazon.com) Server Hosting at Amazon
@@ -145,7 +144,7 @@
    sudo nano //home/grader/.ssh/authorized_keys
    ```                                 
 
-#### Deploy Project #### 
+## Deploying Web App On Server ## 
 
 1. Install Required Plugins
 
@@ -216,7 +215,7 @@
     git clone
     ```                                 
 
-## RESOURCES ##
+#### RESOURCES ####
 
 [How To Deploy a Flask Application on an Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 
