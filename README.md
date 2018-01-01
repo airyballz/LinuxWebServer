@@ -5,7 +5,7 @@
 ### PROJECT DETAILS ###
 
 > Remotley Install A Linux Server To Host A Public Website      
-You Can View My Example Here : http://18.217.166.56/
+ http://18.217.166.56/
 
 ### REQUIREMENTS ###
 
